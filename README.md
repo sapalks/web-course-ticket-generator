@@ -1,2 +1,2 @@
-# web-course-tiket-generator
-Tiket generator
+# web-course-ticket-generator
+Ticket generator
