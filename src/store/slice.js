@@ -1,22 +1,33 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import asyncActions from './asyncThunks';
 import selectors from './selectors';
 
 const initialState = {
-  param1: 1,
-  data: null,
-};
-
-const extraReducers = {
-  [asyncActions.getData.fulfilled]: (state, { payload: data }) => {
-    state.data = data;
-  },
+  time: 5,
+  data: [],
+  count: 0,
+  isRefresh: false,
 };
 
 const reducers = {
-  setParam1(state, { payload: param1 }) {
-    state.param1 = param1;
+  setData(state, { payload: data }) {
+    state.data = data;
+  },
+  setCorrect(state, { payload: count }) {
+    if (count === null) {
+      state.count = 0;
+    }
+
+    state.count += count;
+  },
+  drop(state) {
+    state.time = 5;
+    state.data = [];
+    state.count = 0;
+    state.isRefresh = true;
+  },
+  setIsRefresh(state, { payload: isRefresh }) {
+    state.isRefresh = isRefresh;
   },
 };
 
@@ -24,9 +35,8 @@ const { actions, reducer } = createSlice({
   name: 'store',
   reducers,
   initialState,
-  extraReducers,
 });
 
-export { actions, selectors, asyncActions };
+export { actions, selectors };
 
 export default reducer;
