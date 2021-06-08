@@ -1,5 +1,5 @@
 {
-  "homepage": "http://protollika.github.io/segment-app",
+  "homepage": "http://sapalks.github.io/web-course-ticket-generator",
   "name": "ulstu-map",
   "version": "1.0.0",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "dev": "webpack serve --config webpack.dev.js --progress --profile --content-base src/",
     "build": "webpack --config webpack.prod.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d build",
     "test": "jest"
   },
   "author": "",
@@ -25,6 +25,7 @@
     "css-loader": "^5.2.0",
     "eslint": "^7.26.0",
     "file-loader": "^6.2.0",
+    "gh-pages": "^3.2.0",
     "html-webpack-plugin": "^5.3.1",
     "jest": "^27.0.4",
     "react-svg-loader": "^3.0.3",
@@ -49,7 +50,6 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "file-saver": "^2.0.5",
     "form-data": "^4.0.0",
-    "gh-pages": "^3.2.0",
     "jszip": "^3.6.0",
     "normalize.css": "^8.0.1",
     "prettier": "^2.3.0",
