@@ -1,7 +1,34 @@
 .container {
-  & > button {
-    &:disabled {
-      background-color: red;
+  padding: 10px;
+  width: 756px;
+  border-radius: 4px;
+
+  >* {
+    vertical-align: middle;
+  }
+
+  span {
+    width: 600px;
+    display: inline-block;
+  }
+
+  &>button {
+    +button {
+      margin-left: 20px;
     }
   }
+
+  &:hover {
+    background: #f0f0f0;
+  }
+}
+
+.misstake {
+  span {
+    text-decoration: line-through;
+  }
+}
+
+.ok {
+  background-color: #a0d0a0 !important;
 }

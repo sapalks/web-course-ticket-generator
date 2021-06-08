@@ -1,8 +1,10 @@
 import React from 'react';
 import Timer from 'react-compound-timer';
 
+import styles from './styles.scss';
+
 const View = ({ time, isRefresh }) => (
-  <div>
+  <div className={styles.timer}>
     Timer
     <Timer initialTime={time * 60 * 1000} direction="backward">
       {({ start, resume, pause, stop, reset, timerState }) => {
@@ -11,7 +13,7 @@ const View = ({ time, isRefresh }) => (
         }
         return (
           <React.Fragment>
-            <div>
+            <div className={styles.time}>
               <Timer.Minutes />
               <span>:</span>
               <Timer.Seconds />
@@ -19,7 +21,6 @@ const View = ({ time, isRefresh }) => (
             <div>
               <button onClick={start}>Start</button>
               <button onClick={pause}>Pause</button>
-              <button onClick={resume}>Resume</button>
             </div>
           </React.Fragment>
         );
